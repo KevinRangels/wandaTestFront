@@ -1,0 +1,74 @@
+<app-menu></app-menu>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6 col-md-12">
+          <h1 class="m-0 text-dark">Posts</h1>
+          <div class="row">
+            <div class="col">
+              <button type="button" data-toggle="modal" data-target="#modalPost"
+               class="btn btn-primary float-right mb-3" (click)='resetForm()'>Nuevo Post</button>
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>UserId</th>
+                    <th>id</th>
+                    <th>Titulo</th>
+                    <th>Contenido</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let post of posts">
+                    <td>{{post.userId}}</td>
+                    <td>{{post.id}}</td>
+                    <td>{{post.title}}</td>
+                    <td>{{post.body}}</td>
+                    <td>
+                      <button class="btn btn-warning" (click)="onPreUpdatePost(post)" data-toggle="modal" data-target="#modalPost">Editar</button>
+                    </td>
+                    <td>
+                        <a href="/posts" class="btn btn-danger"
+                        (click)="onDeletePost(post.id)">Eliminar</a>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div><!-- /.col -->
+        <div class="col-sm-6 col-md-12">
+         
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+        
+
+          <!-- /.card -->
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-lg-6">
+          
+
+         
+        </div>
+        <!-- /.col-md-6 -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content -->
+</div>
+<app-modal></app-modal>
